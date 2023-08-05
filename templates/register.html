@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="login-image"></div>
+<div class="centered-on-image">
+    <div class="register-container">
+        <div class="login-box">
+            <h2>Register</h2>
+            <form action="/register" method="post" id="register-form">
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" name="username" required id="register-username">
+                    <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" name="email" required id="register-email">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="password" required id="register-password">
+                    <label>Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="confirm_password" required id="register-confirm">
+                    <label>Confirm Password</label>
+                </div>
+                <button type="submit" class="login-btn" id="register-submit">Register</button>
+                <div class="register">
+                    <p>Have an account?
+                        <a href="/login" class="register-link">Sign In</a>
+                    </p>
+                </div>
+                {% if email_taken %}
+                <div class="incorrect-login" id="error-text">
+                    <p>
+                        Email already taken!
+                    </p>
+                {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

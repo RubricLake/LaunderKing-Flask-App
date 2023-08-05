@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="order-image">
+<div class="centered-on-image-order">
+<div class="product-container">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+        <img src="../static/folded.jpg" alt="folding">
+        <h2>Wash and Fold</h2>
+        <p class="price">$1.50 per pound</p>
+        <p class="description">Simple Wash and Fold service with delivery.</p>
+        {% if session["user_id"] %}
+        <form action="/order" method="post">
+            <input type="hidden" name="service_name" value="Wash and Fold">
+            <input type="hidden" name="service_price" value="$1.50 per pound">
+            <input type="hidden" name="service_description" value="Simple Wash and Fold service with delivery.">
+            <button type="submit" class="buy-now-button">Buy Now</button>
+        </form>
+        {% else %}
+        <button class="buy-now-button-login" id="login-button">Sign In</button>
+        {% endif %}
+    </div>
+
+    <div class="product-card">
+        <img src="../static/dryclean.jpg" alt="dryclean">
+        <h2>Dry Cleaning</h2>
+        <p class="price">From $10.00</p>
+        <p class="description">Dry cleaning service for formal attire.</p>
+        {% if session["user_id"] %}
+        <form action="/order" method="post">
+            <input type="hidden" name="service_name" value="Dry Cleaning">
+            <input type="hidden" name="service_price" value="From $10.00">
+            <input type="hidden" name="service_description" value="Dry cleaning service for formal attire.">
+            <button type="submit" class="buy-now-button">Buy Now</button>
+        </form>
+        {% else %}
+        <button class="buy-now-button-login" id="login-button">Sign In</button>
+        {% endif %}
+    </div>
+
+    <div class="product-card">
+        <img src="../static/bedding.jpg" alt="bedding">
+        <h2>Bedding and Linen</h2>
+        <p class="price">$15.00</p>
+        <p class="description">Washing and folding of bedding, sheets, and duvet covers.</p>
+        {% if session["user_id"] %}
+        <form action="/order" method="post">
+            <input type="hidden" name="service_name" value="Bedding and Linen">
+            <input type="hidden" name="service_price" value="$15.00">
+            <input type="hidden" name="service_description" value="Washing and folding of bedding, sheets, and duvet covers.">
+            <button type="submit" class="buy-now-button">Buy Now</button>
+        </form>
+        {% else %}
+        <button class="buy-now-button-login" id="login-button">Sign In</button>
+        {% endif %}
+    </div>
+
+    <div class="product-card">
+        <img src="../static/delicate.jpg" alt="delicate">
+        <h2>Special Handling</h2>
+        <p class="price">From $5.00</p>
+        <p class="description">Cleaning of clothing that requires special attention or care.</p>
+        {% if session["user_id"] %}
+        <form action="/order" method="post">
+            <input type="hidden" name="service_name" value="Special Handling">
+            <input type="hidden" name="service_price" value="From $5.00">
+            <input type="hidden" name="service_description" value="Cleaning of clothing that requires special attention or care.">
+            <button type="submit" class="buy-now-button">Buy Now</button>
+        </form>
+        {% else %}
+        <button class="buy-now-button-login" id="login-button">Sign In</button>
+        {% endif %}
+    </div>
+    
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+{% if session["user_id"] %}
+    Logged in
+{% else %}
+    Not logged in
+{% endif %}
+    Order Idea List
+    1. Wash and Fold Service
+    2. Express Delivery
+    3. Dry Cleaning
+    4. Bedding and Linen Service
+    5. Laundry for Special Items
+
+Each "order section" needs to have a :
+        1. picture
+        2. title
+        3. price
+        4. brief description
+        5. order or "sign in to order" button
+-->
+{% endblock %}

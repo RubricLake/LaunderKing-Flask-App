@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Local laundromat business ready to serve all!">
+        <meta name="keywords" content="Laundromat, Cleaners, Clothes Cleaning, ecommerce ">
+        <meta name="author" content="Ethan Kigotho">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+
+        <!--
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        -->
+
+        <title>LaunderKing</title>
+
+        <link rel="stylesheet" type="text/css" href="../static/styles.css">
+        <!-- Bootstrap JS
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        -->
+        
+        <script src="../static/script.js"></script>
+        <script src="https://kit.fontawesome.com/2c50979b95.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div class="">
+              <img src="../static/icon.png" alt="logo">
+                <h1 class="title-text"> LaunderKing</h1>
+              </div>
+  
+              <ul>
+                <li>
+                  <a href="/">Home</a>
+                </li>|
+                <li>
+                  <a href="/about">About</a>
+                </li>|
+                <li>
+                  <a href="/order">Order</a>
+                </li>|
+                {% if session["user_id"] %}
+                <li>
+                  <a href="/history"> {{session["username"] | capitalize }}'s History</a>
+                </li>|
+                <li>
+                  <a href="/logout">Sign Out</a>
+                </li>
+                {% else %}
+                <li>
+                  <strong><a href="/login">Sign In</a></strong>
+                </li>
+                {% endif %}
+                <!--
+                <div class="box">
+                  <input type="text" placeholder="Search this site..." id="search">
+                  <a href="#">
+                    <i class="fas fa-search"></i>
+                  </a>
+                </div>
+                -->
+
+              </ul>
+            </nav> <!-- End of Navbar -->
+
+        {% block body %} {% endblock %}
+
+        <footer class="footer"> <!-- Footer -->
+            <div class="footer-logo">
+              <h1> LaunderKing</h1>
+            </div>
+            <div class="footer-info">
+              <ul>
+                <li>
+                  Give us a Call!
+                </li>
+                <li>
+                  555-123-4567
+                </li>
+              </ul>
+            </div>
+        </footer>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script src="../static/script.js"></script>
+    </body>
+</html>

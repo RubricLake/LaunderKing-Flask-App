@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="login-image"></div>
+<div class="centered-on-image">
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="/login" method="post" id="login-form">
+                
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" name="email" required id="login-email">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" name="password" required id="login-password">
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="register">
+                    <p>Don't have an account?
+                        <a href="/register" class="register-link">Register</a>
+                    </p>
+                </div>
+                {% if invalid_login %}
+                <div class="incorrect-login" id="error-text">
+                    <p>
+                        Invalid Login, Try Again!
+                    </p>
+                </div>
+                {% elif logout %}
+                <div class="logout-login" id="logout-text">
+                    <p>
+                        Succesfully Signed Out!
+                    </p>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

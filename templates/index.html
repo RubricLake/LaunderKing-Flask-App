@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+    {% block body%}
+        <div class="container">
+          <div class="parallax"></div> <!-- Background Image-->
+            <div class="centered-on-image">
+              <h1>
+                The King of Cleaning
+              </h1>
+              <h2>
+                Washer, Dryer, and Laundromat Services
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome-container"> <!--Intermediate Bar-->
+          <div class="welcome-text">
+            We're happy to serve!
+          </div>
+        </div> <!--End of Intermediate Bar-->
+
+        <div class="how-it-works-container"> <!--How it works-->
+          <div class="how-it-works-h1-container">
+            <h1>So, how does it work?</h1>
+          </div>
+          <div class="three-step-images"> <!-- Images-->
+            <img class="invert-effect" src="../static/ecommerce.png" style="height: 120px; width: 120px;">
+            <img class="invert-effect" src="../static/deliverytruck.png" style="height: 120px; width: 120px;">
+            <img class="invert-effect" src="../static/washing.png"  style="height: 120px; width: 120px;">
+          </div>
+          <div class="three-step-text">
+            <p> Create and customize an order online through this website.</p>
+            <p> A trained delivery driver will arrive at the customer's location to pick up their laundry.</p>
+            <p>  The laundry will be cleaned and neatly folded before being delivered back to its rightful owner.</p>
+          </div>
+          <div class="get-started">
+            <a href="#" class="bget-started">Start Here</a>
+          </div>
+        </div>
+        
+    {% endblock %}
+</html>

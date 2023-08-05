@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="history-container">
+    <div class="history-title-container">
+        <h1> {{session["username"] }}'s Order History</h1>
+    </div>
+    <ul class="table">
+        <li class="header">
+            <div class="col col-1"><strong>Order ID</strong></div>
+            <div class="col col-2"><strong>Service Name</strong></div>
+            <div class="col col-3"><strong>Price</strong></div>
+            <div class="col col-4"><strong>Description</strong></div>
+        </li>
+        {% for order in orderInfo %}
+        {% if is_even(order['id']) %}
+        <li class="row-odd">
+            <div class="col col-1">{{ order['id']|string }}</div>
+            <div class="col col-2">{{ order['serviceType'] }}</div>
+            <div class="col col-3">{{ order['servicePrice'] }}</div>
+            <div class="col col-4">{{ order['serviceDescription'] }}</div>
+        </li>
+        {% else %}
+        <li class="row-even">
+            <div class="col col-1">{{ order['id']|string }}</div>
+            <div class="col col-2">{{ order['serviceType'] }}</div>
+            <div class="col col-3">{{ order['servicePrice'] }}</div>
+            <div class="col col-4">{{ order['serviceDescription'] }}</div>
+        </li>
+        {% endif %}
+        {% endfor %}
+        <!--
+            <li class="row">
+                        <div class="col col-1">1</div>
+                        <div class="col col-2">Wash and fold</div>
+                        <div class="col col-3">$3.50</div>
+                        <div class="col col-4">Cleaning of clothing that requires special attention or care.</div>
+                    </li>
+        -->
+    </ul>
+</div>
+
+{% endblock %}
